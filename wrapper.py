@@ -9,7 +9,7 @@ logger = logging.getLogger()
 
 
 class WhisperWrapper:
-    def __init__(self, input_file_path:str, model_name="tiny.en"):
+    def __init__(self, input_file_path: str, model_name="tiny.en"):
         if pathlib.Path(input_file_path).is_absolute():
             self.input_file_path = input_file_path
         else:
