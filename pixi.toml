@@ -27,13 +27,17 @@ install_model = {cmd = [
     "make", 
     "$WHISPER_MODEL"
     ], env = { WHISPER_MODEL = "tiny.en" }, cwd = "whisper.cpp-master", depends_on = ["install_whisper"],  outputs = ["ggml-*.bin"]}
+ruff = {cmd = [
+    "ruff" , ".", "--fix", "&&", "ruff", "format", "."
+    ]}
 
 
 [tool.pixi.pypi-dependencies]
 transcriber = { path = ".", editable = true }
 
-
 [dependencies]
 python = ">=3.12.3,<3.13"
 pydub = ">=0.25.1,<0.26"
 ruff = ">=0.4.2,<0.5"
+ffmpeg = ">=6.1.1,<6.2"
+tqdm = ">=4.66.2,<4.67"

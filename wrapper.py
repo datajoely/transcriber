@@ -1,4 +1,6 @@
 import json
+import os
+import pathlib
 import subprocess
 import tempfile
 import logging
@@ -6,11 +8,14 @@ import logging
 logger = logging.getLogger()
 
 
-class Transcriber:
+class WhisperWrapper:
     def __init__(self, input_file_path, model_name="tiny.en"):
-        self.input_file_path = input_file_path
+        if pathlib.Path(input_file_path).is_absolute():
+            self.input_file_path = input_file_path
+        else:
+            self.input_file_path = str(pathlib.Path("../" + input_file_path))
         self.model_name = model_name
-        self.processed_data = self.process_input_file()
+        self.json = self.process_input_file()
 
     def process_input_file(self):
         output_structure = {}
@@ -61,11 +66,11 @@ class Transcriber:
 
             finally:
                 # Remove the temporary file
-                # os.unlink(output_file_path)
+                os.unlink(output_file_path)
                 pass
 
-        return output_structure
+        return json.dumps(output_structure)
 
 
 if __name__ == "__main__":
-    print(json.dumps(Transcriber("samples/jfk.wav").processed_data))
+    print(WhisperWrapper("samples/jfk.wav").json)
