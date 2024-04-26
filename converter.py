@@ -27,10 +27,10 @@ class Converter:
 
         # Do whatever you need to do with the temporary file
         # For now, let's just print the temporary file path
-        logging.info("Temporary WAV file:", temp_file_path)
+        logging.info(f"Temporary WAV file: {temp_file_path}")
         self.temp_file_path = temp_file_path
 
-    def clean_up(self):
+    def clean_up(self) -> None:
         if self.temp_file_path:
             os.unlink(self.temp_file_path)
 
