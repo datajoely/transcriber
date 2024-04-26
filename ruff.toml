@@ -1,0 +1,4 @@
+exclude = [
+    "whisper.cpp-master",
+    ".pixi"
+]

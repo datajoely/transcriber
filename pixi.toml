@@ -1,0 +1,39 @@
+[project]
+name = "transcriber"
+version = "0.1.0"
+description = "A transcriber application using Whisper"
+authors = ["datajoely <joel.schwarzmann@quantumblack.com>"]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64"]
+
+[tasks]
+download_whisper = { cmd = [
+    "curl",
+    "-L" ,
+    "-o" ,
+    "whisper.zip",
+    "https://github.com/ggerganov/whisper.cpp/archive/refs/heads/master.zip"
+], outputs = ["whisper.zip"]}
+prepare_whisper = {cmd = [
+    "unzip",
+    "-o",
+    "whisper",
+    "&&",
+    "rm",
+    "whisper.zip"
+], depends_on = ["download_whisper"]}
+install_whisper = {cmd = ["make"], cwd = "whisper.cpp-master", depends_on = ["prepare_whisper"]}
+install_model = {cmd = [
+    "make", 
+    "$WHISPER_MODEL"
+    ], env = { WHISPER_MODEL = "tiny.en" }, cwd = "whisper.cpp-master", depends_on = ["install_whisper"],  outputs = ["ggml-*.bin"]}
+
+
+[tool.pixi.pypi-dependencies]
+transcriber = { path = ".", editable = true }
+
+
+[dependencies]
+python = ">=3.12.3,<3.13"
+pydub = ">=0.25.1,<0.26"
+ruff = ">=0.4.2,<0.5"

@@ -1,0 +1,8 @@
+# pixi environments
+.pixi
+*.egg-info
+whisper.cpp-master
+.DS_Store
+.gitattributes
+.ruff_cache
+*.pyc
