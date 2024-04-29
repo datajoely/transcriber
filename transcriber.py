@@ -22,8 +22,8 @@ class Transcriber:
         else:
             source_path = str(working_path)
 
-        transcriber = WhisperWrapper(source_path)
-        print(transcriber.json)
+        self.whisper_model = WhisperWrapper(source_path)
+        print(self.whisper_model.json)
 
         if self.converter:
             logger.info("Cleaning up temporary files")

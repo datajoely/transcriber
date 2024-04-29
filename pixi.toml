@@ -32,11 +32,10 @@ ruff = {cmd = [
     ]}
 
 
-[tool.pixi.pypi-dependencies]
-transcriber = { path = ".", editable = true }
-
 [dependencies]
 python = ">=3.12.3,<3.13"
 pydub = ">=0.25.1,<0.26"
 ruff = ">=0.4.2,<0.5"
 ffmpeg = ">=6.1.1,<6.2"
+streamlit = ">=1.33.0,<1.34"
+streamlit-aggrid = ">=1.0.3.post2,<1.0.4"
