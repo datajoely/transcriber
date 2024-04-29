@@ -9,8 +9,8 @@ A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
   - Downloads and unzips the `whisper.cpp` repo
   - Builds the from source
   - Downloads `tiny.en` model
-  - Cleans up
-- Run pass an MP3 to the model as WAV: `python -m transcriber  | jq -c`  
+  - Cleans up build
+- Pass any audio file to the model and it will be converted to a temporary WAV file at run time: `python -m transcriber  | jq -c`  
 
 ## Render the streamlit app:
 
