@@ -1,6 +1,6 @@
 # Transcriber
 
-A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp) to transcribe audio files. [I wrote this](https://github.com/charliermarsh/whisper.cpp-cli) literally hours before this was released by @charliemarsh , but it was a fun task to use Pixi to build things from source.
+A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp) to transcribe audio files. I wrote this [literally hours before @charliemarsh released this](https://github.com/charliermarsh/whisper.cpp-cli), but it was a fun task to use Pixi to build things from source.
 
 ## Getting started
 
