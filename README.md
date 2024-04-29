@@ -1,6 +1,6 @@
 # Transcriber
 
-A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp) to transcribe audio files
+A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp) to transcribe audio files. [I wrote this](https://github.com/charliermarsh/whisper.cpp-cli) literally hours before this was released by @charliemarsh , but it was a fun task to use Pixi to build things from source.
 
 ## Getting started
 
@@ -11,3 +11,9 @@ A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
   - Downloads `tiny.en` model
   - Cleans up
 - Run pass an MP3 to the model as WAV: `python -m transcriber  | jq -c`  
+
+## Render the streamlit app:
+
+- streamlit run app.py`
+
+![streamlit_app](media/image.png)
