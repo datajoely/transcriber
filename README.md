@@ -14,6 +14,6 @@ A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
 
 ## Render the streamlit app:
 
-- streamlit run app.py`
+`streamlit run app.py`
 
 ![streamlit_app](media/image.png)
