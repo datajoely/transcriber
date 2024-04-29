@@ -10,7 +10,8 @@ A utility which uses the [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
   - Builds the from source
   - Downloads `tiny.en` model
   - Cleans up build
-- Pass any audio file to the model and it will be converted to a temporary WAV file at run time: `python -m transcriber  | jq -c`  
+- Run example: `python -m transcriber | jq -c`  (Will transcribe "`samples/bruce.mp3`")
+  - Transcriber class will auto-convert audio files to WAV format at runtime
 
 ## Render the streamlit app:
 
